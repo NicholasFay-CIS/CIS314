@@ -1,0 +1,110 @@
+problem 4)
+
+a)0x000000C4
+C: 1100
+4: 0100
+0: 0000
+Bindary:  00000000000000000000000011000100
+we have a 1 in the 2^7, 2^6 and 2^2 place
+thus 2^7 + 2^6 + 2^2 = 128 + 64 + 4 = 196
+Answer: 196
+
+b)0xFFFFFEC4
+F: 1111
+E: 1110
+C: 1100
+4: 0100
+Binary: 1111 1111 1111 1111 1110 1100 0100
+thus by two's complement,
+-2^31 + 2^ 30 + 2^29 + 2^28 + 2^27 + 2^26 + 2^25 + 2^24 + 2^23 + 2^22 + 2^21 + 2^20 + 2^19 + 2^18 + 2^17 + 2^16 + 2^15 + 2^14 + 2^13 + 2^12 + 2^11 + 2^10 + 2^9 + 2^7 + 2^6 + 2^2 = -316
+Answer: -316
+
+c) 0xFFFFFFFF
+F: 1111
+Here every single bit in the 32 bit integer is 1. So, add each place using twos complement as such
+-2^31 + 2^30 + 2^29 +......+2^4 + 2^3 + 2^2 + 2^1 + 2^0 = -1
+
+Answer: -1
+
+
+
+problem 5)
+
+a) 0xBF800000
+
+Binary: 1011 1111 1000 0000 0000 0000 0000 0000
+signed bit: 1
+exp: 01111111 = 127
+Fraction: 0000 0000 0000 0000 ..
+Bias: 127
+E = 127 - 127 = 0
+-1 * 2^0 = -1
+Answer: -1
+
+b) 0x3FC00000
+Binary: 0011 1111 1100 0000 0000 0000 0000 0000 
+signed bit: 0
+exp: 01111111 = 127
+Fraction: 1000 0000 0000 0000 .. 
+Bias: 127
+E = 127 - 127 = 0
+1.1000 * 2^0 = 1.5
+Answer: 1.5
+
+c) 0x42C80000
+Binary: 0100 0010 1100 1000 0000 0000 0000 0000
+signed bit: 0
+exp: 10000101 = 133
+Fraction: 1001 0000 0000 0000 ..
+Bias: 127
+E = 133 - 127 = 6
+1.1001 * 2^6 = 1100100 = 100
+Answer: 100
+ 
+
+problem 6)
+
+a) 1.0
+E: 0 #this is because we do not have to move the decimal
+Bias: 127
+Exp = 0 + 127 = 127 = 01111111
+signed bit: 0
+Fraction: 0000 0000 0000 ..
+0011 1111 1000 0000 0000 0000 0000 0000
+3    F    8    0    0    0    0    0
+Answer: 0x3F800000
+
+b) -10.25
+10.25 is 1010.0100
+shift this 3 places to the left
+1.0100100
+E: 3 #number of binary places to move
+Bias: 127
+Exp: 3 + 127 = 130 = 10000010
+signed bit: 1 #it states 10.25 is negative
+Fraction: 0100100..
+1100 0001 0010 0100 0000 0000 0000 0000
+C    1    2    4    0    0    0    0
+Answer: 0xC1240000
+
+c) 314.25
+314.25 is 10000111.0100
+shift the decimal 8 places to the left
+1.001110100100
+E: 8
+Bias: 127
+Exp: 8 + 127  = 135 = 10000111
+signed bit: 0 #it states its non negative
+Fraction: 001110100100
+0100 0011 1001 1101 0010 0000 0000 0000 
+4    3    9    D    2    0    0    0
+Answer: 0x439D2000
+
+
+
+
+
+
+
+
+

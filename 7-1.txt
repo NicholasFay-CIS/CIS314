@@ -1,0 +1,16 @@
+CIS 314 
+Assignment 7
+7-1 A-B
+
+
+A) 
+i x j
+16 x 16 = 256 * 4 (the a,r,g,b struct values)
+= 1,024 total writes
+1,024 / 8 (long size) = 128 misses
+1,024 - 128 = 896 hits 
+it misses 12.5% of the time
+	
+B) 
+In this algorithm we are grabbing the columns rather than rows (in part A)
+Therefore we want to look at each column in the block but the cache is being made up of a linear block of data from the rows. Essentially we will have to load a new block into the cache 25% of the time. This means that the hit rate would be 75%. Thus this means that it misses twice as much as the original function. It misses 256 times and hits 768 times. 
